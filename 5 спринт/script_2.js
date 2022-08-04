@@ -1,55 +1,38 @@
 const puppeteer = require('puppeteer');
 
-const URL_TEST = 'https://qa-routes.praktikum-services.ru/';
-
-async function testTaxiResult() {
+async function testYaRu(){
     console.log('Запуск браузера');
-    const browser = await puppeteer.launch({headless: false, slowMo: 100});
+    const browser = await puppeteer.launch();
 
     console.log('Создание новой вкладки в браузере');
     const page = await browser.newPage();
 
-    console.log('Переход по ссылке');
-    await page.goto(URL_TEST);
+    console.log('Переход на страницу ya.ru');
+    await page.goto('https://ya.ru/');
 
-    console.log('Шаг 1: ввод часов и минут');
-    const hoursInput = await page.$('#form-input-hour');
-    await hoursInput.type('08');
+    console.log('Ввод текста "Автоматизация тестирования" в поисковую строку');
+    const searchField = await page.$('#text');
+    await searchField.type('Автоматизация тестирования');
 
-    const minutesInput = await page.$('#form-input-minute');
-    await minutesInput.type('00');
+    console.log('Клик в кнопку "Найти"');
+    const searchButton = await page.$('.button[type=submit]');
+    await searchButton.click();
+    
+    console.log('Ожидание перехода в страницу поисковых результатов');
+    await page.waitForNavigation();
 
-    console.log('Шаг 2: заполнение поля Откуда');
-    const fromInput = await page.$('#form-input-from');
-    await fromInput.type('Усачева, 3');
+    console.log('Получение элементов результата поиска');
+    const result = await page.$('.serp-item');
 
-    console.log('Шаг 3: заполнение поля Куда');
-    const toInput = await page.$('#form-input-to');
-    await toInput.type('Комсомольский проспект, 18');
-
-    console.log('Шаг 4: выбор режима Свой');
-    const routeMode = await page.$('#form-mode-custom');
-    await routeMode.click();
-
-    console.log('Шаг 5: выбор вида транспорта');
-    const typeOfTransport = await page.$('#from-type-taxi');
-    await typeOfTransport.click();
-
-    console.log('Ожидание элемента с результатом');
-    await page.waitForSelector('#result-time-price');
-
-    console.log('Получение строки с результатом');
-    const text = await page.$eval('#result-time-price', element => element.textContent);
-
-    console.log('Проверка условия тест-кейса');
-        if (text.startsWith('Такси')) {
-        console.log('Успех. Текст содержит: ' + text);
+    console.log('Сравнение ОР и ФР');
+    if (result == null) {
+       console.log('Результаты поиска не найдены');
     } else {
-          console.log(`Ошибка. Текст не начинается со слова 'Такси'`)
+       console.log('Результаты поиска отобразились');
     }
-
+    
     console.log('Закрытие браузера');
     await browser.close();
 }
 
-testTaxiResult();
+testYaRu();
