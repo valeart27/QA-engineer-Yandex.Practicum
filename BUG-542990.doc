@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<title>[#BUG-542990] Машина каршеринга располагается в реке</title>
+	<meta name="generator" content="LibreOffice 7.3.3.2 (Windows)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2022-08-04T12:04:18.942000000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 2cm; margin-right: 1cm; margin-top: 1cm; margin-bottom: 1cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		td p { orphans: 0; widows: 0; background: transparent }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; font-weight: bold }
+		h3.cjk { font-family: "NSimSun"; font-size: 14pt; font-weight: bold }
+		h3.ctl { font-family: "Arial Unicode MS"; font-size: 14pt; font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr">
+<table width="680" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background: #ffffff; page-break-before: always">
+	<col width="680"/>
+
+	<tr>
+		<td width="680" bgcolor="#f0f0f0" style="background: #f0f0f0; border: none; padding: 0cm"><h3 class="western">
+			[BUG-542990]&nbsp;<a href="https://tracker.yandex.ru/r/BUG-542990?source_from=doc&amp;source_type=export">Машина
+			каршеринга располагается в реке</a> 
+			</h3>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<table width="680" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background: #ffffff">
+	<col width="183"/>
+
+	<col width="124"/>
+
+	<col width="101"/>
+
+	<col width="271"/>
+
+	<tr>
+		<td width="183" bgcolor="#f0f0f0" style="background: #f0f0f0; border: none; padding: 0cm"><p>
+			<b>Тип:</b></p>
+		</td>
+		<td width="124" bgcolor="#ffffff" style="background: #ffffff; border: none; padding: 0cm"><p>
+			Ошибка</p>
+		</td>
+		<td width="101" bgcolor="#f0f0f0" style="background: #f0f0f0; border: none; padding: 0cm"><p>
+			<b>Приоритет:</b></p>
+		</td>
+		<td width="271" bgcolor="#ffffff" style="background: #ffffff; border: none; padding: 0cm"><p>
+			Средний</p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<table width="680" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background: #ffffff">
+	<col width="206"/>
+
+	<col width="474"/>
+
+	<tr>
+		<td width="206" bgcolor="#f0f0f0" style="background: #f0f0f0; border: none; padding: 0cm"><p>
+			<b>Вложения:</b></p>
+		</td>
+		<td width="474" bgcolor="#ffffff" style="background: #ffffff; border: none; padding: 0cm"><p>
+			<a href="https://tracker.yandex.ru/r/attachment/BUG-542990/628145">BUG-542990-яндексмаршруты-иконка-машины-каршеринга-в-реке.jpg</a></p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<center>
+	<table width="91" cellpadding="2" cellspacing="0">
+		<col width="87"/>
+
+		<tr>
+			<td width="87" bgcolor="#bbbbbb" style="background: #bbbbbb; border: none; padding: 0cm"><p align="center">
+				<font color="#ffffff"><b>Описание</b></font>&nbsp;</p>
+			</td>
+		</tr>
+	</table>
+</center>
+<table width="680" cellpadding="2" cellspacing="0">
+	<col width="674"/>
+
+	<tr>
+		<td width="674" style="border: 1px solid #cccccc; padding: 0.05cm"><p>
+			Описание: Иконка свободной машины каршеринга находится в реке</p>
+			<p style="margin-bottom: 0.5cm">Предусловие:</p>
+			<ol>
+				<li><p>Открыть тестовый стенд Яндекс.Маршруты</p>
+				<li><p>Ввести в поле &quot;Откуда&quot; адрес: Хамовнический Вал,
+				34</p>
+				<li><p>Ввести в поле &quot;Куда&quot; адрес: Фрунзенская
+				набережная, 46</p>
+				<li><p>Выбрать режим &quot;Свой&quot;</p>
+				<li><p>Выбрать тип транспорта &quot;Каршеринг&quot;</p>
+				<li><p style="margin-bottom: 0.5cm">Нажать кнопку &quot;Забронировать&quot;</p>
+			</ol>
+			<p style="margin-bottom: 0.5cm">Шаги воспроизведения:</p>
+			<ol>
+				<li><p style="margin-bottom: 0.5cm">Открыть форму бронирования</p>
+			</ol>
+			<p>ОР: Иконка машины каршеринга находятся на дороге или
+			парковке<br/>
+ФР: Иконка машины каршеринга находятся в реке</p>
+			<p>Окружение:<br/>
+ОС Windiws 10 v.21H1 браузер: Firefox v.99.0.1
+			разрешение: 1920x1080<br/>
+ОС Windiws 10 v.21H1 браузер:
+			Яндекс.Браузер v.22.3.3.852 разрешение: 800х600</p>
+			<p><br/>
+
+			</p>
+		</td>
+	</tr>
+</table>
+<p><br/>
+<br/>
+
+</p>
+</body>
+</html>
